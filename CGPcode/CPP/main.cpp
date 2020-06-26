@@ -77,8 +77,8 @@ int main(int argc, char** argv) {
     //If the proper folders already have AIG files on it, this call is unnecessary. 
     //The git version already has some AIGs generated from both techniques.
 #if generate_starting_aigs == 1
-    system("../../sk_to_cgp/run_all.sh");
-    system("mv ../../sk_to_cgp/AIGS_BEST ../../AIGS_BEST");
+	system("sh run_all.sh");
+    system("mv /AIGS_BEST ../../AIGS_BEST");
     
     for(int f=0;f<100;f++)
     {
