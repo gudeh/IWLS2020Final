@@ -1,4 +1,4 @@
-# IWLS 2020 Contest - UFSC, team CGP!
+# IWLS 2020 Contest, team CGP Brazil!
 
 This code stores a Cartesian Genetic Programming (CGP) implementation designed to solve the IWLS 2020 contest with a Machine Learning technique. This implementation is based on an evolutive design, inspiered by the evolution of living beings. The CGP is composed of a set of individuals, also known as population, and their genetic code is stored in a matrix format, which is a cartesian description of connections the individuals have with each other. Each individual in this particular implementation represents a circuit to be discovered. Where the contest exposes a partial (tiny most of the times) behaviour of each circuit in PLA files. In this implementation, the CGP nodes are equivalent (most of the time) to AND nodes from the AND-Inverter Graph (AIG) format. The learning with the CGP technique comes from mutations applied during the learning process, individuals have a certain predetermined (and adaptive) chance to mutate at each generation. The individuals are then evlauated after mutations to choose a father to generate the next offspring generation of individuals.
 
