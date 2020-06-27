@@ -45,9 +45,7 @@
 //if smart_init is 0.
 #define train_with_validation_set 0
 
-//The PLA benchmarks provided by the contest were handled and wiritten in 4 
-//different versions. With configurations such as 50-50, 90-10 or 80-20.
-#define new_benchmarks 4
+
 
 //With the exmeplar_set set to 0, and this option set to 1, the CGP will run with
 //execution parameters set as input. For example "./cgp 1 2 3" would execute the
@@ -84,7 +82,19 @@
 #define smart_init 1
 #define expresso_path "../../Benchmarks_3_espresso_aig/"
 #define sk_path  "../../AIGS_BEST/"
-#define generate_starting_aigs 0
+
+//The PLA benchmarks provided by the contest were handled and wiritten in 4 
+//different versions. With configurations such as 50-50, 90-10 or 80-20.
+#define new_benchmarks 4
+
+//This option calls for SK and Espresso tools to generate the input data needed.
+//The SK code will generate some AIGs to initialize the CGP and a modified version
+//of the PLA inputs. If the new_benchmarks variable is not set to 1 and the PLA modified
+//folder is not present, this option has to be set to 1 (vide main.cpp with different codes
+//depending on the new_benchmarks variable).
+//If the code is downloaded from git the folders already contain the data needed conserning the AIG
+//inputs and the modified PLAs with versions Benchmark_3 and Benchamrks_4.
+#define generate_starting_aigs 1
 
 //With a previous initialization, its CGP may be created with extra nodes for a 
 //greater space exploration of solutions. 0 would be the original size, 1 creates

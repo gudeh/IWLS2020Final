@@ -311,6 +311,7 @@ int main(int argc, char** argv) {
         cout<<"READING INPUT EXEMPLAR FILES (SK and ESP)!!!!"<<endl;
         if(aux_stream.is_open())
         {
+			if ( aux_stream.peek() != std::ifstream::traits_type::eof() ){
             aux_stream.close();
 #if COUT == 1
             cout<<"----------Expresso AIG for "<<exemplar_name<<" found."<<endl;       
@@ -321,7 +322,7 @@ int main(int argc, char** argv) {
             expresso_pair=expresso_aig.firstEvaluation(&whole_pla);
             if(get<1>(expresso_pair)<=0.55) 
                 {get<0>(expresso_pair)=-1; get<1>(expresso_pair)=-1; get<2>(expresso_pair)=-1;}
-        }
+        }}
         tuple<float,float,float> sk_pair; get<0>(sk_pair)=-1; get<1>(sk_pair)=-1;
         AigPopulation sk_aig; sk_aig.clearAigPopu(); CgpPopulation sk_cgp; sk_cgp.clearCgp();
         aux_stream.open(sk_path+exemplar_name+".aig");
