@@ -78,6 +78,7 @@ int main(int argc, char** argv) {
     //The git version already has some AIGs generated from both techniques.
 #if generate_starting_aigs == 1
 	system("sh run_all.sh");
+	system("rm -rf ../../AIGS_BEST");
     system("mv AIGS_BEST ../../");
     
     for(int f=0;f<100;f++)
